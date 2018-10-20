@@ -9,6 +9,7 @@ const routes: Routes = [
     { path: "cards", loadChildren: "~/app/cards/cards.module#CardsModule"},
     { path: "promotions", loadChildren: "~/app/promotions/promotions.module#PromotionsModule"},
     { path: "create-card", loadChildren: "~/app/create-card/create-card.module#CreateCardModule"},
+    { path: "create-promotion", loadChildren: "~/app/create-promotion/create-promotion.module#CreatePromotionModule"},
     { path: "settings", loadChildren: "~/app/settings/settings.module#SettingsModule" }
 ];
 
