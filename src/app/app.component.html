@@ -21,7 +21,14 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/promotions')" (tap)="onNavItemTap('/promotions')">
                     <Label col="0" text="&#xf015;" class="fa"></Label>
                     <Label col="1" text="Promotions" class="p-r-10"></Label>
-                </GridLayout>   
+                </GridLayout>  
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/create-card')" (tap)="onNavItemTap('/create-card')">
+                    <Label col="0" text="&#xf015;" class="fa"></Label>
+                    <Label col="1" text="Create Keychain Card" class="p-r-10"></Label>
+                </GridLayout>  
 
                 <StackLayout class="hr-light"></StackLayout>
 

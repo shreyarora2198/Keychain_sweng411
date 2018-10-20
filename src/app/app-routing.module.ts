@@ -8,6 +8,7 @@ const routes: Routes = [
     { path: "signup", loadChildren: "~/app/signup/signup.module#SignupModule"},
     { path: "cards", loadChildren: "~/app/cards/cards.module#CardsModule"},
     { path: "promotions", loadChildren: "~/app/promotions/promotions.module#PromotionsModule"},
+    { path: "create-card", loadChildren: "~/app/create-card/create-card.module#CreateCardModule"},
     { path: "settings", loadChildren: "~/app/settings/settings.module#SettingsModule" }
 ];
 
