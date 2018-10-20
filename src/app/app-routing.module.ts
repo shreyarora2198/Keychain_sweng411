@@ -5,6 +5,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 const routes: Routes = [
     { path: "", redirectTo: "/login", pathMatch: "full" },
     { path: "login", loadChildren: "~/app/login/login.module#LoginModule"},
+    { path: "signup", loadChildren: "~/app/signup/signup.module#SignupModule"},
     { path: "cards", loadChildren: "~/app/cards/cards.module#CardsModule"},
     { path: "promotions", loadChildren: "~/app/promotions/promotions.module#PromotionsModule"},
     { path: "settings", loadChildren: "~/app/settings/settings.module#SettingsModule" }

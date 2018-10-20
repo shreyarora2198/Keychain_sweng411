@@ -2,12 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
-    selector: "Login",
+    selector: "Signup",
     moduleId: module.id,
-    styleUrls: ['login.component.css'],
-    templateUrl: "./login.component.html"
+    templateUrl: "./signup.component.html"
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
     constructor(private router: Router) {
         // Use the component constructor to inject providers.
@@ -17,11 +16,7 @@ export class LoginComponent implements OnInit {
         // Init your component properties here.
     }
 
-    routeKeychainCard(): void {
-        this.router.navigate(["/cards"]);
-    }
-
-    routeSignup(): void {
-        this.router.navigate(["/signup"]);
+    routeLogin(): void {
+        this.router.navigate(["/login"]);
     }
 }
