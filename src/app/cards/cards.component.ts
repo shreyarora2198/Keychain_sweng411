@@ -5,6 +5,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 @Component({
     selector: "Cards",
     moduleId: module.id,
+    styleUrls: ["./cards.component.css"],
     templateUrl: "./cards.component.html"
 })
 export class CardsComponent implements OnInit {

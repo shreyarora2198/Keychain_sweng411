@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 @Component({
     selector: "Signup",
     moduleId: module.id,
+    styleUrls: ["./signup.component.css"],
     templateUrl: "./signup.component.html"
 })
 export class SignupComponent implements OnInit {
