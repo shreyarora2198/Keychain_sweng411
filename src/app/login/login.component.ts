@@ -24,4 +24,8 @@ export class LoginComponent implements OnInit {
     routeSignup(): void {
         this.router.navigate(["/signup"]);
     }
+
+    routeDbTesting(): void {
+        this.router.navigate(["/dbtesting"]);
+    }
 }

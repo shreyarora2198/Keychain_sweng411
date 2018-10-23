@@ -10,7 +10,8 @@ const routes: Routes = [
     { path: "promotions", loadChildren: "~/app/promotions/promotions.module#PromotionsModule"},
     { path: "create-card", loadChildren: "~/app/create-card/create-card.module#CreateCardModule"},
     { path: "create-promotion", loadChildren: "~/app/create-promotion/create-promotion.module#CreatePromotionModule"},
-    { path: "settings", loadChildren: "~/app/settings/settings.module#SettingsModule" }
+    { path: "settings", loadChildren: "~/app/settings/settings.module#SettingsModule"},
+    { path: "dbtesting", loadChildren: "~/app/db-testing/db-testing.module#DbTestingModule"}
 ];
 
 @NgModule({
