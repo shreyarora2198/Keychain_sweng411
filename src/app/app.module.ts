@@ -5,6 +5,15 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
+import firebase = require('nativescript-plugin-firebase');
+
+firebase.init().then(()=>{
+    console.log('Firebase initialized');
+})
+.catch(error=>console.error('Error:+${error}'))
+
+
+
 @NgModule({
     bootstrap: [
         AppComponent
