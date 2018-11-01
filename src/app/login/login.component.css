@@ -23,6 +23,7 @@
 .input-field {
     width: 75%;
     text-align: center;
+    background-color: white;
     border-color: black;
     border-width: 2;
     padding: 10px 10px 0px 10px;
