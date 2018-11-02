@@ -5,6 +5,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 @Component({
     selector: "Settings",
     moduleId: module.id,
+    styleUrls: ["./settings.component.css"],
     templateUrl: "./settings.component.html"
 })
 export class SettingsComponent implements OnInit {
