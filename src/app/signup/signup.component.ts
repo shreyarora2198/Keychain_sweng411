@@ -9,9 +9,11 @@ import { Router } from "@angular/router";
 })
 export class SignupComponent implements OnInit {
 
+    isCompanyUser = false;
+
     constructor(private router: Router) {
         // Use the component constructor to inject providers.
-    }
+    }   
 
     ngOnInit(): void {
         // Init your component properties here.
@@ -19,5 +21,9 @@ export class SignupComponent implements OnInit {
 
     routeLogin(): void {
         this.router.navigate(["/login"]);
+    }
+
+    toggleCompanyUser() {
+        this.isCompanyUser = !this.isCompanyUser;
     }
 }
