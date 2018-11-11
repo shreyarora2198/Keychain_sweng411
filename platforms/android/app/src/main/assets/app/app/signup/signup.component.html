@@ -1,0 +1,28 @@
+<!-- <StackLayout>
+    <Label text="Signup"></Label>
+    <Button text="Goto Login" (tap)="routeLogin()"></Button>
+</StackLayout> -->
+<Page>
+    <StackLayout class="layout">
+        <Label class="title" text="SIGN UP"></Label>
+
+        <StackLayout class="input-field">
+            <TextField class="input" hint="Enter Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <TextField class="input" hint="Enter Password" autocorrect="false" autocapitalizationType="none"></TextField>
+        </StackLayout>
+
+        <StackLayout *ngIf="isCompanyUser" class="input-field">
+                <TextField class="input" hint="Enter Company Name" autocorrect="false" autocapitalizationType="none"></TextField>
+        </StackLayout>
+
+        <StackLayout class="button-field">
+            <Label class="company-button" [text]="isCompanyUser ? 'No, I am not a Company User' : 'Yes, I am a Company User'" (tap)="toggleCompanyUser()"></Label>
+        </StackLayout>
+        
+        <StackLayout class="button-field">
+            <Button class="create-button" text="Sign Up" (tap)="routeLogin()"></Button>
+        </StackLayout>
+    </StackLayout>
+</Page>
