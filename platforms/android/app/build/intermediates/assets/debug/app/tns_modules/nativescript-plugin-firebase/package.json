@@ -1,28 +1,32 @@
 {
-  "_from": "nativescript-plugin-firebase",
+  "_args": [
+    [
+      "nativescript-plugin-firebase@7.2.0",
+      "C:\\Users\\Chris\\Desktop\\Keychain_sweng411"
+    ]
+  ],
+  "_from": "nativescript-plugin-firebase@7.2.0",
   "_id": "nativescript-plugin-firebase@7.2.0",
   "_inBundle": false,
   "_integrity": "sha512-8ukIxOh0dM+i+Kp+7ohZtLEC53wuHrHAxWEqhjlzzRheDR5AAxDkTkf/FpMlqlisAypfh3EKwECvLFibzPhR4A==",
   "_location": "/nativescript-plugin-firebase",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "nativescript-plugin-firebase",
+    "raw": "nativescript-plugin-firebase@7.2.0",
     "name": "nativescript-plugin-firebase",
     "escapedName": "nativescript-plugin-firebase",
-    "rawSpec": "",
+    "rawSpec": "7.2.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "7.2.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-plugin-firebase/-/nativescript-plugin-firebase-7.2.0.tgz",
-  "_shasum": "82340ecf44181d80dae5f9084d22d2863c32172e",
-  "_spec": "nativescript-plugin-firebase",
-  "_where": "/Users/morgan/Keychain_sweng411",
+  "_spec": "7.2.0",
+  "_where": "C:\\Users\\Chris\\Desktop\\Keychain_sweng411",
   "author": {
     "name": "Eddy Verbruggen",
     "email": "eddyverbruggen@gmail.com"
@@ -30,7 +34,6 @@
   "bugs": {
     "url": "https://github.com/eddyverbruggen/nativescript-plugin-firebase/issues"
   },
-  "bundleDependencies": false,
   "config": {
     "typingsproject": "demo-ng"
   },
@@ -40,7 +43,6 @@
     "prompt-lite": "~0.1.0",
     "xcode": "~0.9.0"
   },
-  "deprecated": false,
   "description": "Fire. Base. Firebase!",
   "devDependencies": {
     "rimraf": "^2.6.2",

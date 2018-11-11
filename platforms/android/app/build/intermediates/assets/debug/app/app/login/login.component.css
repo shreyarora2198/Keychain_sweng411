@@ -1,4 +1,41 @@
-Button {
+/* Button {
     height: 50;
     width: 200;
+} */
+
+.page {
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, blue, lightblue, blue);
+}
+.form {
+    margin: 3;
+    flex-grow: 2;
+    vertical-align: middle;
+}
+.title {
+    font-size: 42;
+    color: darkred;
+    font-weight: bold;
+    padding-bottom: 250px;
+    text-align: center;
+}
+.input-field {
+    width: 75%;
+    text-align: center;
+    background-color: white;
+    border-color: black;
+    border-width: 2;
+    padding: 10px 10px 0px 10px;
+  }
+
+.login_button {
+    background-color: white; 
+    width: 50%;
+} 
+
+.signup {
+    font-size: 18;
+    font-weight: bold;
+    padding-bottom: 25px;
 }

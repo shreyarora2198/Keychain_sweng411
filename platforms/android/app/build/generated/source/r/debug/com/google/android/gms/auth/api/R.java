@@ -11,9 +11,9 @@ public final class R {
         public static final int buttonSize = 0x7f030041;
         public static final int circleCrop = 0x7f03004e;
         public static final int colorScheme = 0x7f03005e;
-        public static final int imageAspectRatio = 0x7f0300ac;
-        public static final int imageAspectRatioAdjust = 0x7f0300ad;
-        public static final int scopeUris = 0x7f0300f7;
+        public static final int imageAspectRatio = 0x7f0300a6;
+        public static final int imageAspectRatioAdjust = 0x7f0300a7;
+        public static final int scopeUris = 0x7f0300f1;
     }
     public static final class color {
         public static final int common_google_signin_btn_text_dark = 0x7f05002b;
@@ -60,7 +60,7 @@ public final class R {
         public static final int light = 0x7f080053;
         public static final int none = 0x7f080064;
         public static final int standard = 0x7f080091;
-        public static final int wide = 0x7f0800b0;
+        public static final int wide = 0x7f0800af;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f090006;
@@ -86,11 +86,11 @@ public final class R {
         public static final int common_signin_button_text_long = 0x7f0b0034;
     }
     public static final class styleable {
-        public static final int[] LoadingImageView = { 0x7f03004e, 0x7f0300ac, 0x7f0300ad };
+        public static final int[] LoadingImageView = { 0x7f03004e, 0x7f0300a6, 0x7f0300a7 };
         public static final int LoadingImageView_circleCrop = 0;
         public static final int LoadingImageView_imageAspectRatio = 1;
         public static final int LoadingImageView_imageAspectRatioAdjust = 2;
-        public static final int[] SignInButton = { 0x7f030041, 0x7f03005e, 0x7f0300f7 };
+        public static final int[] SignInButton = { 0x7f030041, 0x7f03005e, 0x7f0300f1 };
         public static final int SignInButton_buttonSize = 0;
         public static final int SignInButton_colorScheme = 1;
         public static final int SignInButton_scopeUris = 2;

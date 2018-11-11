@@ -2,7 +2,7 @@
   "_args": [
     [
       "nativescript-hook@0.2.4",
-      "/Users/morgan/Keychain_sweng411"
+      "C:\\Users\\Chris\\Desktop\\Keychain_sweng411"
     ]
   ],
   "_development": true,
@@ -35,7 +35,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-hook/-/nativescript-hook-0.2.4.tgz",
   "_spec": "0.2.4",
-  "_where": "/Users/morgan/Keychain_sweng411",
+  "_where": "C:\\Users\\Chris\\Desktop\\Keychain_sweng411",
   "author": {
     "name": "NativeScript"
   },
