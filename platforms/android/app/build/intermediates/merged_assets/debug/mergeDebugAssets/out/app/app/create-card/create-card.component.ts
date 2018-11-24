@@ -32,7 +32,6 @@ export class CreateCardComponent implements OnInit {
 
     public onScan() {
         this.barcodescanner.scan({
-            formats: "QR_CODE, EAN_13",
             showFlipCameraButton: true,
             preferFrontCamera: false,
             showTorchButton: true,
@@ -43,11 +42,6 @@ export class CreateCardComponent implements OnInit {
             console.log("Format: " + result.format + ",\nConent: " + result.text);
             this.barcodeFormat = result.format;
             this.barcodeData = result.text;
-            // dialogs.alert({
-            //     title: "You Scanned ",
-            //     message: "Format: " + result.format + ",\nConent: " + result.text,
-            //     okButtonText: "OK"
-            // });
         }, (errorMessage) => {
             console.log("Error when scanning " + errorMessage);
         });

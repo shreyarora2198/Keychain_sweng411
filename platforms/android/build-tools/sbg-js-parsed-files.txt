@@ -96,6 +96,7 @@
 /Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/ns-route-reuse-strategy.js
 /Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/router.module.js
 /Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/page-router-outlet.js
+/Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app/tns_modules/nativescript-zxing/zxing.js
 /Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app/tns_modules/nativescript-barcodescanner/barcodescanner-common.js
 /Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app/tns_modules/nativescript-barcodescanner/barcodescanner.js
 /Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app/tns_modules/nativescript-barcodescanner/hooks/before-watch/nativescript-dev-typescript.js

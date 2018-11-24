@@ -16,10 +16,14 @@
 </ActionBar>
 
 <StackLayout class="p-20">
-    <Button text="Scan Barcode" (tap)="onScan()" class="btn btn-primary btn-active"></Button>
-    <Label text="Format: {{this.barcodeFormat}}" class="info-label"></Label>
-    <Label text="Data: {{this.barcodeData}}" class="info-label"></Label>
+    <Button text="Scan Barcode" (tap)="onScan()" class="btn btn-primary btn-active scan-button"></Button>
+    <Label text="Barcode Format:" class="info-label"></Label>
+    <TextField text="Barcode Format" [(ngModel)]="this.barcodeFormat" class="input-field"></TextField>
+    <Label text="Barcode ID:" class="info-label"></Label>
+    <TextField hint="Barcode ID" [(ngModel)]="this.barcodeData" class="input-field"></TextField>
+    <Label text="Keychain Card Name:" class="info-label"></Label>
     <TextField hint="Keychain Card Name" [(ngModel)]="this.cardName" class="input-field"></TextField>
+    <Label text="Location:" class="info-label"></Label>
     <TextField hint="Location" [(ngModel)]="this.cardLocation" class="input-field"></TextField>
     <Button text="Create Card" class="btn btn-primary btn-active" (tap)="createCard()"></Button>
 </StackLayout>

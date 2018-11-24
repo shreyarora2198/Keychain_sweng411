@@ -14,5 +14,7 @@
     </ActionItem>
     <Label class="action-bar-title" text="Keychain Cards"></Label>
 </ActionBar>
-
-<Label text="keychain cards page"></Label>
+<StackLayout>
+    <Button (tap)="generateBarcode()" id="barcode" text="GENERATE BARCODE"></Button>
+    <Image #barcodeImg id="barcode-img" height="100" stretch="aspectFill" class="text-center"></Image>
+</StackLayout>

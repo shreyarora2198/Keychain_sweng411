@@ -20,6 +20,10 @@
         "directory": "../../node_modules/nativescript-ui-sidedrawer"
     },
     {
+        "name": "nativescript-zxing",
+        "directory": "../../node_modules/nativescript-zxing"
+    },
+    {
         "name": "tns-core-modules",
         "directory": "../../node_modules/tns-core-modules"
     },

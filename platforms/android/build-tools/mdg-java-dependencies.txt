@@ -70,4 +70,3 @@
 /Users/david/code/nativescript/keychain/platforms/android/app/build/exploded-dependencies/14/classes.jar
 /Users/david/code/nativescript/keychain/platforms/android/app/build/exploded-dependencies/22/classes.jar
 /Users/david/code/nativescript/keychain/platforms/android/app/build/exploded-dependencies/25/classes.jar
-/Users/david/code/nativescript/keychain/platforms/android/app/build/intermediates/javac/debug

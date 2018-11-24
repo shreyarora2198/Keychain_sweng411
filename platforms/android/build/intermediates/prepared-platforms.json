@@ -13,6 +13,7 @@
     "nativescript-plugin-firebase": true,
     "nativescript-theme-core": true,
     "nativescript-ui-sidedrawer": true,
+    "nativescript-zxing": true,
     "reflect-metadata": true,
     "rxjs": true,
     "tns-core-modules": true,
