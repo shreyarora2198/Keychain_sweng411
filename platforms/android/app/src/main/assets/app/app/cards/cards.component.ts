@@ -1,11 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { Image } from "tns-core-modules/ui/image";
-import { TextField } from "ui/text-field";
-
-const ZXing = require("nativescript-zxing");
-const ImageSource = require("image-source");
+import { Router } from "@angular/router";
 
 @Component({
     selector: "Cards",
@@ -16,15 +12,12 @@ const ImageSource = require("image-source");
 
 export class CardsComponent implements OnInit {
 
-    @ViewChild("barcodeImg") barcodeImg: ElementRef;
-    barcodeText="036000291452";
-
-    constructor() {
+    constructor(private router: Router) {
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
-        
+
     }
 
     onDrawerButtonTap(): void {
@@ -32,13 +25,7 @@ export class CardsComponent implements OnInit {
         sideDrawer.showDrawer();
     }
 
-    generateBarcode() {
-        const barcodeImage = <Image>this.barcodeImg.nativeElement;
-        const zx = new ZXing();
-        const newImg = zx.createBarcode({
-            encode: this.barcodeText,
-            format: ZXing.UPC_A
-        });
-        barcodeImage.imageSource = ImageSource.fromNativeSource(newImg);
+    navigateViewCard() {
+        this.router.navigate(["/view-card"]);
     }
 }
