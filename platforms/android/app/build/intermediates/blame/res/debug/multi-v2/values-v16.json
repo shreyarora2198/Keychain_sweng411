@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/morgan/Keychain_sweng411/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/Users/shreyarora/Desktop/Keychain_sweng411/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/morgan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/75bd8b0c1391e97645918e8108aeb3e0/res/values-v16/values-v16.xml",
+                    "source": "/Users/shreyarora/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/af2c5172518ab8b48eabe48b1bb37bc2/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/Users/shreyarora/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/38c79621be1b736343d154aaef27ff74/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

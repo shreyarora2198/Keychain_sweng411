@@ -1,18 +1,18 @@
 {
 	"nativescript-plugin-firebase": {
-		"/Users/morgan/Keychain_sweng411/node_modules/nativescript-plugin-firebase/platforms/android/README.md": "5277c8e5fea43afb12c4ad60ff7b5b791a4ea008",
-		"/Users/morgan/Keychain_sweng411/node_modules/nativescript-plugin-firebase/platforms/android/firebase-release.aar": "0bd38b3642553b544ba961f5657489e0b28bf86f",
-		"/Users/morgan/Keychain_sweng411/node_modules/nativescript-plugin-firebase/platforms/android/include.gradle": "8f5719253278ebd67cd4c79b77b1b24cc453865a"
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/nativescript-plugin-firebase/platforms/android/README.md": "5277c8e5fea43afb12c4ad60ff7b5b791a4ea008",
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/nativescript-plugin-firebase/platforms/android/firebase-release.aar": "0bd38b3642553b544ba961f5657489e0b28bf86f",
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/nativescript-plugin-firebase/platforms/android/include.gradle": "90b1a25bffd6adcb3a30ffa36af087c419655f24"
 	},
 	"nativescript-ui-sidedrawer": {
-		"/Users/morgan/Keychain_sweng411/node_modules/nativescript-ui-sidedrawer/platforms/android/TNSSideDrawer-release.aar": "014feca9bb77a2b9bb64edb4fdc8a0fbfab4abed",
-		"/Users/morgan/Keychain_sweng411/node_modules/nativescript-ui-sidedrawer/platforms/android/typings/sidedrawer.d.ts": "0f2a3e771108a347deabbf76e7a66491b6e6bfc1"
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/nativescript-ui-sidedrawer/platforms/android/TNSSideDrawer-release.aar": "014feca9bb77a2b9bb64edb4fdc8a0fbfab4abed",
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/nativescript-ui-sidedrawer/platforms/android/typings/sidedrawer.d.ts": "0f2a3e771108a347deabbf76e7a66491b6e6bfc1"
 	},
 	"nativescript-ui-core": {
-		"/Users/morgan/Keychain_sweng411/node_modules/nativescript-ui-core/platforms/android/TNSCore-release.aar": "7e9c7f089e6c8aeea48b19e54e4bb1ff62b70eed",
-		"/Users/morgan/Keychain_sweng411/node_modules/nativescript-ui-core/platforms/android/typings/core.d.ts": "57a0606617eef3c732c1a7f32480b1e166ad27ce"
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/nativescript-ui-core/platforms/android/typings/core.d.ts": "57a0606617eef3c732c1a7f32480b1e166ad27ce",
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/nativescript-ui-core/platforms/android/TNSCore-release.aar": "7e9c7f089e6c8aeea48b19e54e4bb1ff62b70eed"
 	},
 	"tns-core-modules-widgets": {
-		"/Users/morgan/Keychain_sweng411/node_modules/tns-core-modules-widgets/platforms/android/widgets-release.aar": "402875596039fd16198e0e4adbb85e44a4ff148d"
+		"/Users/shreyarora/Desktop/Keychain_sweng411/node_modules/tns-core-modules-widgets/platforms/android/widgets-release.aar": "402875596039fd16198e0e4adbb85e44a4ff148d"
 	}
 }

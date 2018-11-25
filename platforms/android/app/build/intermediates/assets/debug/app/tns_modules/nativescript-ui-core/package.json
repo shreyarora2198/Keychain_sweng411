@@ -2,7 +2,7 @@
   "_args": [
     [
       "nativescript-ui-core@1.0.1",
-      "/Users/morgan/Keychain_sweng411"
+      "/Users/shreyarora/Desktop/Keychain_sweng411"
     ]
   ],
   "_from": "nativescript-ui-core@1.0.1",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-ui-core/-/nativescript-ui-core-1.0.1.tgz",
   "_spec": "1.0.1",
-  "_where": "/Users/morgan/Keychain_sweng411",
+  "_where": "/Users/shreyarora/Desktop/Keychain_sweng411",
   "author": {
     "name": "NativeScript Team",
     "email": "nativescriptplugins@progress.com"

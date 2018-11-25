@@ -4,7 +4,7 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-
+import {NativeScriptFormsModule} from "nativescript-angular/forms"
 import firebase = require('nativescript-plugin-firebase');
 
 firebase.init().then(()=>{
@@ -21,7 +21,8 @@ firebase.init().then(()=>{
     imports: [
         AppRoutingModule,
         NativeScriptModule,
-        NativeScriptUISideDrawerModule
+        NativeScriptUISideDrawerModule,
+        NativeScriptFormsModule
     ],
     declarations: [
         AppComponent

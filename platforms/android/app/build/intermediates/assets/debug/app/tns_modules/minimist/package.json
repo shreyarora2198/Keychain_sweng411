@@ -2,7 +2,7 @@
   "_args": [
     [
       "minimist@0.0.8",
-      "/Users/morgan/Keychain_sweng411"
+      "/Users/shreyarora/Desktop/Keychain_sweng411"
     ]
   ],
   "_development": true,
@@ -27,7 +27,7 @@
   ],
   "_resolved": "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
   "_spec": "0.0.8",
-  "_where": "/Users/morgan/Keychain_sweng411",
+  "_where": "/Users/shreyarora/Desktop/Keychain_sweng411",
   "author": {
     "name": "James Halliday",
     "email": "mail@substack.net",
