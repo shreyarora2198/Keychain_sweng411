@@ -15,4 +15,61 @@
         <Label class="action-bar-title" text="Promotions"></Label>
     </ActionBar>
 
-    <Label text="promotions page"></Label>
+    <GridLayout rows="auto,*">
+        <StackLayout class="title" height="10%" row="0" width="100%" orientation="horizontal" horizontalAlignment="center">
+            <Button text="Add Promotion *TEST*" (tap)="addPromotion()" class="test-button"></Button>
+        </StackLayout>
+
+
+        <ListView [items]="promtnList">
+            <ng-template let-item="item" let-i="index">
+                <StackLayout>
+                    <Label [text]='"index: " + i'></Label>
+                    <Label [text]='item.name'></Label>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+
+        <!-- <ScrollView width="80%" row="1" orientation="vertical">
+            <StackLayout *ngFor="let promtn of promtnList" class="promtn-list">
+                <Label [text]="promtn"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+                <Label text="promotions" class="promtn-text"></Label>
+            </StackLayout>
+        </ScrollView> -->
+
+
+    </GridLayout>
