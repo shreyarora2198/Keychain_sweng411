@@ -5,6 +5,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { User } from "./user";
 
 import firebase = require('nativescript-plugin-firebase');
 import { BarcodeScanner } from "nativescript-barcodescanner";
@@ -33,7 +34,8 @@ firebase.init().then(()=>{
         NO_ERRORS_SCHEMA
     ],
     providers: [
-        BarcodeScanner
+        BarcodeScanner,
+        User
     ]
 })
 export class AppModule { }
