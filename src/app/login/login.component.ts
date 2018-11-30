@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { User } from "../user";
 
 @Component({
     selector: "Login",
@@ -9,12 +10,14 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+                private user: User) {
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
         // Init your component properties here.
+        this.user.setUserId("123456789");
     }
 
     routeKeychainCard(): void {
