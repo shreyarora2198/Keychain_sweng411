@@ -22,4 +22,5 @@ export class CreateCardComponent implements OnInit {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
     }
+    
 }
