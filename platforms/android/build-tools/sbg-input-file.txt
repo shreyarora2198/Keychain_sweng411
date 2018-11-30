@@ -1,1 +1,1 @@
-/Users/morgan/Keychain_sweng411/platforms/android/app/src/main/assets/app
+/Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/app

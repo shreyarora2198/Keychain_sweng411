@@ -4,6 +4,10 @@
         "directory": "../../node_modules/nativescript-angular"
     },
     {
+        "name": "nativescript-barcodescanner",
+        "directory": "../../node_modules/nativescript-barcodescanner"
+    },
+    {
         "name": "nativescript-plugin-firebase",
         "directory": "../../node_modules/nativescript-plugin-firebase"
     },
@@ -14,6 +18,10 @@
     {
         "name": "nativescript-ui-sidedrawer",
         "directory": "../../node_modules/nativescript-ui-sidedrawer"
+    },
+    {
+        "name": "nativescript-zxing",
+        "directory": "../../node_modules/nativescript-zxing"
     },
     {
         "name": "tns-core-modules",
