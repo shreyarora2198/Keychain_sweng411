@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "Cards",
@@ -8,18 +9,23 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
     styleUrls: ["./cards.component.css"],
     templateUrl: "./cards.component.html"
 })
+
 export class CardsComponent implements OnInit {
 
-    constructor() {
+    constructor(private router: Router) {
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
-        // Init your component properties here.
+
     }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
+    }
+
+    navigateViewCard() {
+        this.router.navigate(["/view-card"]);
     }
 }

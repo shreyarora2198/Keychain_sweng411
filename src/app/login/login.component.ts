@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { User } from "../shared/user.model";
-import { EventData } from "tns-core-modules/ui/page/page";
+import { User } from "../user";import { EventData } from "tns-core-modules/ui/page/page";
 import { Page } from "ui/page";
 import {TextField} from "ui/text-field";
 import {Button} from "ui/button";
@@ -29,20 +28,20 @@ let authResult;
     templateUrl: "./login.component.html"
 })
 export class LoginComponent implements OnInit {
-    user: User;
-    
-    constructor(private router: Router) {
-        this.user = new User();
+
+    constructor(private router: Router,
+                private user: User) {
+        // Use the component constructor to inject providers.
     }
     ngOnInit(): void {
         // Init your component properties here.
-         
     }
     pageLoaded(args: EventData): void {
         page = <Page>args.object;
         password = <TextField>page.getViewById("password");
         email = <TextField>page.getViewById("email");
         console.log(page);
+        this.user.setUserId("123456789"); //testing
     }
     routeKeychainCard(): void {
         console.log(password.text);
