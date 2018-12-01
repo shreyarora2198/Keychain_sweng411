@@ -7,14 +7,14 @@
         <Label class="title" text="SIGN UP"></Label>
 
         <StackLayout class="input-field">
-            <TextField class="input" hint="Enter Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField class="input" [(ngModel)]="this.email" hint="Enter Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         <StackLayout class="input-field">
-            <TextField class="input" hint="Enter Password" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField class="input" [(ngModel)]= "this.password" hint="Enter Password" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
 
         <StackLayout *ngIf="isCompanyUser" class="input-field">
-                <TextField class="input" hint="Enter Company Name" autocorrect="false" autocapitalizationType="none"></TextField>
+                <TextField class="input" [(ngModel)]= "this.company" hint="Enter Company Name" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
 
         <StackLayout class="button-field">

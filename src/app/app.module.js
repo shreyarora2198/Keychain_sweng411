@@ -9,6 +9,7 @@ var app_component_1 = require("./app.component");
 var user_1 = require("./user");
 var firebase = require("nativescript-plugin-firebase");
 var nativescript_barcodescanner_1 = require("nativescript-barcodescanner");
+
 firebase.init().then(function () {
     console.log('Firebase initialized');
 })

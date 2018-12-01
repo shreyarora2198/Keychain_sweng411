@@ -1,7 +1,26 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { User } from "../user";
-
+import { User } from "../user";import { EventData } from "tns-core-modules/ui/page/page";
+import { Page } from "ui/page";
+import {TextField} from "ui/text-field";
+import {Button} from "ui/button";
+import { ArgumentOutOfRangeError } from "rxjs";
+import { waitForMap } from "@angular/router/src/utils/collection";
+const firebase = require("nativescript-plugin-firebase");
+const firebaseWebApi = require("nativescript-plugin-firebase/app");
+let page;
+let password;
+let email;
+let authResult;
+// let pageLoaded = (args) =>{
+//     let page = <Page>args.object;
+//     let password = <TextField>page.getViewById("password");
+//     let login =<Button>page.getViewById("login");
+//     login.on('tap',function(args: EventData){
+//         console.log(password)
+//     });
+// }
+// export { pageLoaded }
 @Component({
     selector: "Login",
     moduleId: module.id,
@@ -14,14 +33,49 @@ export class LoginComponent implements OnInit {
                 private user: User) {
         // Use the component constructor to inject providers.
     }
-
     ngOnInit(): void {
         // Init your component properties here.
-        this.user.setUserId("123456789");
     }
-
+    pageLoaded(args: EventData): void {
+        page = <Page>args.object;
+        password = <TextField>page.getViewById("password");
+        email = <TextField>page.getViewById("email");
+        console.log(page);
+        this.user.setUserId("123456789"); //testing
+    }
     routeKeychainCard(): void {
-        this.router.navigate(["/cards"]);
+        console.log(password.text);
+        console.log(email.text);
+
+        // to store a JSON object
+        // firebase.setValue(
+        //     '/companies',
+        //     {foo:'bar'}
+        // );
+
+        // to store an array of JSON objects
+        firebase.setValue(
+            '/users',
+            [
+            {name: email.text, country: password.text}
+            ]
+        );
+        firebase.login(
+            {
+              type: firebase.LoginType.PASSWORD,
+              passwordOptions: {
+                email: email.text,
+                password: password.text
+              }
+            })
+            .then(result => {this.router.navigate(["/cards"])
+                            authResult=JSON.stringify(result)
+                        }
+                )
+            .catch((error) => console.log(error+" lol"));
+            // this.router.navigate(["/cards"])
+        
+            // result => JSON.stringify(result)+" ali g"
     }
 
     routeSignup(): void {

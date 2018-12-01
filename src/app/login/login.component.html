@@ -3,21 +3,22 @@
     <Button text="Login" (tap)="routeKeychainCard()"></Button>
     <Button text="Sign up" (tap)="routeSignup()"></Button>
 </StackLayout> -->
-
-<FlexboxLayout class="page">
+<Page id="page" (loaded)="pageLoaded($event)">
+<FlexboxLayout class="page" loaded = "pageLoaded">
     <StackLayout class="form">
         <Label class="title" text="KEYCHAIN"></Label>
 
         <StackLayout class="input-field">
-            <TextField class="input" hint="Username" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField id ="email" class="input" hint="Username" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         
         <StackLayout class="input-field">
-            <TextField class="input" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField  id="password" class="input" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         
-        <Button class="login_button" text="Log In" (tap)="routeKeychainCard()"></Button>
+        <Button id = "login" class="login_button" text="Log In" (tap)="routeKeychainCard($event)"></Button>
     </StackLayout>
   
     <Label class="signup" text="Don't have an account? Sign Up" (tap)="routeSignup()"></Label>
 </FlexboxLayout>
+</Page>
