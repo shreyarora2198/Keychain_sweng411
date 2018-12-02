@@ -44,9 +44,12 @@ export class LoginComponent implements OnInit {
                                 console.log(result);
                                 if(result.value === null){
                                     this.user.setCompany(false);
+                                    console.log("not a company user");
                                 }
-                                else this.user.setCompany(true);
-                                
+                                else {
+                                    this.user.setCompany(true);
+                                    console.log("Company user");
+                                }
                             })
                             .catch(error => console.log("Error: " + error));
                             this.router.navigate(["/cards"])
