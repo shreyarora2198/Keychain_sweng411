@@ -9,11 +9,11 @@
         <Label class="title" text="KEYCHAIN"></Label>
 
         <StackLayout class="input-field">
-            <TextField id ="email" class="input" hint="Username" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField [(ngModel)]="this.email" id ="email" class="input" hint="Username" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         
         <StackLayout class="input-field">
-            <TextField  id="password" class="input" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField  [(ngModel)]="this.password" id="password" class="input" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         
         <Button id = "login" class="btn btn-primary btn-active login-button" text="Log In" (tap)="routeKeychainCard($event)"></Button>
