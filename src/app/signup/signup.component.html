@@ -4,7 +4,6 @@
 </StackLayout> -->
 <Page>
     <StackLayout class="layout">
-        <Label class="title" text="SIGN UP"></Label>
 
         <StackLayout class="input-field">
             <TextField class="input" [(ngModel)]="this.email" hint="Enter Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
@@ -22,7 +21,7 @@
         </StackLayout>
         
         <StackLayout class="button-field">
-            <Button class="create-button" text="Sign Up" (tap)="routeLogin()"></Button>
+            <Button class="btn btn-primary btn-active create-button" text="Sign Up" (tap)="routeLogin()"></Button>
         </StackLayout>
     </StackLayout>
 </Page>
