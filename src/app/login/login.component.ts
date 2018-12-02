@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
                             .catch(error => console.log("Error: " + error));
                             this.router.navigate(["/cards"])
                         })
-            .catch((error) => 
+            .catch((error => {
                 console.log(error),
                 dialogs.alert({
                     title: "Incorrect Username or Password",
@@ -63,10 +63,11 @@ export class LoginComponent implements OnInit {
                 }).then(() => {
                     console.log("Dialog closed!");
                 })
-                );
+            }
+            ));
     }
 
     routeSignup(): void {
         this.router.navigate(["/signup"]);
     }
-}
+}//
