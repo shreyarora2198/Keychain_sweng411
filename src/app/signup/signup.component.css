@@ -4,16 +4,8 @@
 } */
 
 .layout {
-    background: linear-gradient(to bottom, blue, lightblue, blue);
-}
-
-.title {
-    font-size: 42;
-    color: darkred;
-    font-weight: bold;
-    padding-bottom: 100%;
-    padding-top: 100%;
-    text-align: center;
+        background-color: white;
+        vertical-align: center;
 }
 
 .input-field {
@@ -42,6 +34,5 @@
 } 
 
 .create-button {
-    background-color: white; 
     width: 50%;
 }
