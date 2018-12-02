@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
 
     get sideDrawerTransition(): DrawerTransitionBase {
         this.companyStatus = this.user.getCompany();
-        console.log("company status: " + this.companyStatus);
 
         return this._sideDrawerTransition;
     }
