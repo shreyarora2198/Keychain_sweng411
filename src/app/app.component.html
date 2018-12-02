@@ -30,7 +30,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <Label col="1" text="Create Keychain Card" class="p-r-10"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/create-promotion')" (tap)="onNavItemTap('/create-promotion')">
+                <GridLayout visibility="{{this.companyStatus ? 'visible' : 'collapsed'}}" columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/create-promotion')" (tap)="onNavItemTap('/create-promotion')">
                     <Label col="0" text="&#xf015;" class="fa"></Label>
                     <Label col="1" text="Create Promotion" class="p-r-10"></Label>
                 </GridLayout>
