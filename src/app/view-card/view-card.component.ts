@@ -17,7 +17,7 @@ const ImageSource = require("image-source");
 export class ViewCardComponent implements OnInit {
 
     @ViewChild("barcodeImg") barcodeImg: ElementRef;
-    barcodeText="036000291452";
+    barcodeText="036000291452";//data
 
     constructor() {
         // Use the component constructor to inject providers.
@@ -27,8 +27,8 @@ export class ViewCardComponent implements OnInit {
         const barcodeImage = <Image>this.barcodeImg.nativeElement;
         const zx = new ZXing();
         const newImg = zx.createBarcode({
-            encode: this.barcodeText,
-            format: ZXing.UPC_A
+            encode: this.barcodeText,//data
+            format: ZXing.UPC_A//format
         });
         barcodeImage.imageSource = ImageSource.fromNativeSource(newImg);
     }

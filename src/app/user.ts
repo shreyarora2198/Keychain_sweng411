@@ -4,6 +4,8 @@ import { Injectable } from "@angular/core";
 export class User {
     private userId;
     private company: boolean;
+    private companyName: string;
+    private email: string;
     constructor() {}
 
     setUserId(iUserId: string) {
@@ -20,5 +22,21 @@ export class User {
 
     getCompany(){
         return this.company;
+    }
+
+    setCompanyName(companyName: string){
+        this.companyName = companyName;
+    }
+
+    getCompanyName(){
+        return this.companyName;
+    }
+
+    setEmail(email: string){
+        this.email = email;
+    }
+    
+    getEmail(){
+        return this.email;
     }
 }
