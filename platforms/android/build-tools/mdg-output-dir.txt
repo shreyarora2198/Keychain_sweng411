@@ -1,1 +1,1 @@
-/Users/david/code/nativescript/keychain/platforms/android/app/src/main/assets/metadata
+C:\Users\Chris\Keychain_sweng411\platforms\android\app/src/main/assets/metadata

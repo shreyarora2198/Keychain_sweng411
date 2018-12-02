@@ -15,4 +15,8 @@
     <Label class="action-bar-title" text="Settings"></Label>
 </ActionBar>
 
-<Label text="settings page"></Label>
+<!-- <Label text="settings page"></Label> -->
+<StackLayout>
+        <CheckBox:CheckBox checked="{{ checkProp }}" text="{{ myCheckText }}" fillColor="{{ myCheckColor }}" id="myCheckbox" />
+        <CheckBox:CheckBox text="CheckBox Label" checked="false" />
+</StackLayout>

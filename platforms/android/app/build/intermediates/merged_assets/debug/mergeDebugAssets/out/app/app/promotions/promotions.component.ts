@@ -8,6 +8,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
     styleUrls: ["./promotions.component.css"],
     templateUrl: "./promotions.component.html"
 })
+
 export class PromotionsComponent implements OnInit {
 
     constructor() {
@@ -21,5 +22,9 @@ export class PromotionsComponent implements OnInit {
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
+    }
+
+    addPromotion(){
+        console.log("------------------------ ItemTapped: ");
     }
 }

@@ -2,10 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 
-class DataItem {
-    constructor(public name: string) { }
-}
-
 @Component({
     selector: "Promotions",
     moduleId: module.id,
@@ -14,16 +10,9 @@ class DataItem {
 })
 
 export class PromotionsComponent implements OnInit {
-    public promtnList: Array<DataItem>
-    private counter: number;
 
     constructor() {
-        this.promtnList = [];
-        this.counter = 0;
-        for (var i = 0; i < 10; i++) {
-            this.promtnList.push(new DataItem("data item " + i));
-            this.counter = i;
-        }
+        // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
@@ -36,8 +25,6 @@ export class PromotionsComponent implements OnInit {
     }
 
     addPromotion(){
-        this.promtnList.push(new DataItem("data item " + this.counter));
-        this.counter++;
         console.log("------------------------ ItemTapped: ");
     }
 }

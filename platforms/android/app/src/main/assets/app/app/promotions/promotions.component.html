@@ -20,19 +20,8 @@
             <Button text="Add Promotion *TEST*" (tap)="addPromotion()" class="test-button"></Button>
         </StackLayout>
 
-
-        <ListView [items]="promtnList">
-            <ng-template let-item="item" let-i="index">
-                <StackLayout>
-                    <Label [text]='"index: " + i'></Label>
-                    <Label [text]='item.name'></Label>
-                </StackLayout>
-            </ng-template>
-        </ListView>
-
-        <!-- <ScrollView width="80%" row="1" orientation="vertical">
-            <StackLayout *ngFor="let promtn of promtnList" class="promtn-list">
-                <Label [text]="promtn"></Label>
+        <ScrollView width="80%" row="1" orientation="vertical">
+            <StackLayout class="promtn-list">
                 <Label text="promotions" class="promtn-text"></Label>
                 <Label text="promotions" class="promtn-text"></Label>
                 <Label text="promotions" class="promtn-text"></Label>
@@ -69,7 +58,6 @@
                 <Label text="promotions" class="promtn-text"></Label>
                 <Label text="promotions" class="promtn-text"></Label>
             </StackLayout>
-        </ScrollView> -->
-
-
+        </ScrollView>
     </GridLayout>
+        

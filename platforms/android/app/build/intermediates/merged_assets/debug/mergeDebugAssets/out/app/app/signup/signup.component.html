@@ -14,11 +14,11 @@
         </StackLayout>
 
         <StackLayout *ngIf="isCompanyUser" class="input-field">
-                <TextField class="input" hint="Enter Company Name" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField class="input" hint="Enter Company Name" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
 
         <StackLayout class="button-field">
-            <Label class="company-button" [text]="isCompanyUser ? 'No, I am not a Company User' : 'Yes, I am a Company User'" (tap)="toggleCompanyUser()"></Label>
+            <Label class="company-button" [text]="isCompanyUser ? 'I am NOT a Company User' : 'I am a Company User'" (tap)="toggleCompanyUser()"></Label>
         </StackLayout>
         
         <StackLayout class="button-field">

@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
     templateUrl: "./signup.component.html"
 })
 export class SignupComponent implements OnInit {
+    //var x = document.createElement("INPUT");
 
     isCompanyUser = false;
 

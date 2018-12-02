@@ -26,6 +26,7 @@
     "@angular/router": "~6.1.0",
     "nativescript-angular": "~6.1.0",
     "nativescript-barcodescanner": "^2.7.9",
+    "nativescript-checkbox": "^3.0.3",
     "nativescript-plugin-firebase": "^7.2.0",
     "nativescript-theme-core": "~1.0.4",
     "nativescript-ui-sidedrawer": "~4.2.0",
