@@ -32,27 +32,27 @@ export class SignupComponent implements OnInit {
             }
         )
         .then((userRecord)=> {
-          // See the UserRecord reference doc for the contents of userRecord.
+          // See the UserRecord reference doc for the contents of userRecord
           console.log("Successfully created new user:", userRecord.uid);
           if(this.isCompanyUser){
               firebase.setValue(
-                '/companies'+'/'+userRecord.uid,
+                '/companies'+'/'+JSON.stringify(userRecord.uid),
                 {
                     email: this.email,
                     company: this.company
                 })
           }else{
             firebase.setValue(
-                '/users'+'/'+userRecord.uid,
+                '/users'+'/'+JSON.stringify(userRecord.uid),
                 {
                     email: this.email
                 })
           }
+          this.router.navigate(["/login"]);
         })
         .catch(function(error) {
           console.log("Error creating new user:", error);
         });
-        // this.router.navigate(["/login"]);
     }
 
     toggleCompanyUser() {
