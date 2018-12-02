@@ -6,7 +6,7 @@
 .page {
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(to bottom, blue, lightblue, blue);
+    background-color: white;
 }
 .form {
     margin: 3;
@@ -14,14 +14,14 @@
     vertical-align: middle;
 }
 .title {
-    font-size: 42;
-    color: darkred;
+    font-size: 50;
+    color: rgb(61, 61, 255);
     font-weight: bold;
-    padding-bottom: 250px;
+    padding-bottom: 20;
     text-align: center;
 }
 .input-field {
-    width: 75%;
+    width: 85%;
     text-align: center;
     background-color: white;
     border-color: black;
@@ -29,8 +29,7 @@
     padding: 10px 10px 0px 10px;
   }
 
-.login_button {
-    background-color: white; 
+.login-button {
     width: 50%;
 } 
 
@@ -38,4 +37,5 @@
     font-size: 18;
     font-weight: bold;
     padding-bottom: 25px;
+    text-align: center;
 }
