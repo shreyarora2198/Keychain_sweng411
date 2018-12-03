@@ -41,17 +41,20 @@ export class LoginComponent implements OnInit {
             .then(result => {
                             this.uid=JSON.stringify(result.uid)
                             this.user.setUserId(this.uid);
+                            this.user.setEmail(JSON.stringify(result.email))
                             firebase.getValue('/companies/'+this.uid)
                             .then(result => {
-                                console.log(result);
                                 if(result.value === null){
                                     this.user.setCompany(false);
+                                    this.user.setCompanyName(null);
                                 }
                                 else {
                                     this.user.setCompany(true);
+                                    this.user.setCompanyName(JSON.stringify(result.value.company));
                                 }
                             })
                             .catch(error => console.log("Error: " + error));
+                            console.log("after login" + this.user.getUserId());
                             this.router.navigate(["/cards"])
                         })
             .catch((error => {
