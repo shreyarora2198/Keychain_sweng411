@@ -12,7 +12,9 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" text="Settings"></Label>
+    <Label class="action-bar-title" text="Logout Page"></Label>
 </ActionBar>
 
-<Label text="settings page"></Label>
+<StackLayout class="logout-stack">
+    <Button text="Logout" (tap)="routeLogin()"class="btn btn-primary btn-active logout-button"></Button>
+</StackLayout>

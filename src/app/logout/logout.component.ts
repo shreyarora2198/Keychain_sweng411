@@ -1,16 +1,17 @@
 import { Component, OnInit } from "@angular/core";
 import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import { Router } from "@angular/router";
 
 @Component({
-    selector: "Settings",
+    selector: "Logout",
     moduleId: module.id,
-    styleUrls: ["./settings.component.css"],
-    templateUrl: "./settings.component.html"
+    styleUrls: ["./logout.component.css"],
+    templateUrl: "./logout.component.html"
 })
-export class SettingsComponent implements OnInit {
+export class LogoutComponent implements OnInit {
 
-    constructor() {
+    constructor(private router: Router) {
         // Use the component constructor to inject providers.
     }
 
@@ -21,5 +22,9 @@ export class SettingsComponent implements OnInit {
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
+    }
+
+    routeLogin() {
+        this.router.navigate(["/login"]);
     }
 }

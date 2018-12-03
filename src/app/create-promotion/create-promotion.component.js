@@ -7,10 +7,8 @@ var nativescript_barcodescanner_1 = require("nativescript-barcodescanner");
 var CreatePromotionComponent = /** @class */ (function () {
     function CreatePromotionComponent(barcodescanner) {
         this.barcodescanner = barcodescanner;
-        this.barcodeFormat = "";
-        this.barcodeData = "";
-        this.cardName = "";
-        this.cardLocation = "";
+        this.promoName = "";
+        this.promoDesc = "";
         // Use the component constructor to inject providers.
     }
     CreatePromotionComponent.prototype.ngOnInit = function () {
@@ -20,26 +18,8 @@ var CreatePromotionComponent = /** @class */ (function () {
         var sideDrawer = app.getRootView();
         sideDrawer.showDrawer();
     };
-    CreatePromotionComponent.prototype.onScan = function () {
-        var _this = this;
-        this.barcodescanner.scan({
-            showFlipCameraButton: true,
-            preferFrontCamera: false,
-            showTorchButton: true,
-            beepOnScan: true,
-            torchOn: false,
-            resultDisplayDuration: 500
-        }).then(function (result) {
-            console.log("Format: " + result.format + ",\nConent: " + result.text);
-            _this.barcodeFormat = result.format;
-            _this.barcodeData = result.text;
-        }, function (errorMessage) {
-            console.log("Error when scanning " + errorMessage);
-        });
-    };
     CreatePromotionComponent.prototype.createPromotion = function () {
-        console.log("CREATING PROMOTION...\nFormat: " + this.barcodeFormat + "\nData: " + this.barcodeData
-            + "\nName: " + this.cardName + "\nLocation: " + this.cardLocation);
+        console.log("\nCREATING PROMOTION...\nName: " + this.promoName + "\nDescription: " + this.promoDesc);
     };
     CreatePromotionComponent = tslib_1.__decorate([
         core_1.Component({

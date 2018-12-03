@@ -11,7 +11,7 @@ var routes = [
     { path: "promotions", loadChildren: "~/app/promotions/promotions.module#PromotionsModule" },
     { path: "create-card", loadChildren: "~/app/create-card/create-card.module#CreateCardModule" },
     { path: "create-promotion", loadChildren: "~/app/create-promotion/create-promotion.module#CreatePromotionModule" },
-    { path: "settings", loadChildren: "~/app/settings/settings.module#SettingsModule" },
+    { path: "logout", loadChildren: "~/app/logout/logout.module#LogoutModule" },
     { path: "view-card", loadChildren: "~/app/view-card/view-card.module#ViewCardModule" }
 ];
 var AppRoutingModule = /** @class */ (function () {

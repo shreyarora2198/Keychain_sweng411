@@ -4,17 +4,22 @@ import * as app from "application";
 import { RouterExtensions } from "nativescript-angular/router";
 import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nativescript-ui-sidedrawer";
 import { filter } from "rxjs/operators";
+import { User } from "./user";
 
 @Component({
     moduleId: module.id,
     selector: "ns-app",
-    templateUrl: "app.component.html"
+    templateUrl: "app.component.html",
+    styleUrls: ["app.component.css"]
 })
 export class AppComponent implements OnInit {
     private _activatedUrl: string;
     private _sideDrawerTransition: DrawerTransitionBase;
+    private companyStatus: boolean;
 
-    constructor(private router: Router, private routerExtensions: RouterExtensions) {
+    constructor(private router: Router,
+                private routerExtensions: RouterExtensions,
+                private user: User) {
         // Use the component constructor to inject services.
     }
 
@@ -25,9 +30,12 @@ export class AppComponent implements OnInit {
         this.router.events
         .pipe(filter((event: any) => event instanceof NavigationEnd))
         .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
+
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
+        this.companyStatus = this.user.getCompany();
+
         return this._sideDrawerTransition;
     }
 

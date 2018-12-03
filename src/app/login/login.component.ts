@@ -4,8 +4,10 @@ import { User } from "../user";
 import { EventData } from "tns-core-modules/ui/page/page";
 import { ArgumentOutOfRangeError } from "rxjs";
 import { waitForMap } from "@angular/router/src/utils/collection";
+import * as dialogs from "tns-core-modules/ui/dialogs";
 const firebase = require("nativescript-plugin-firebase");
 const firebaseWebApi = require("nativescript-plugin-firebase/app");
+
 @Component({
     selector: "Login",
     moduleId: module.id,
@@ -49,16 +51,26 @@ export class LoginComponent implements OnInit {
                                 else {
                                     this.user.setCompany(true);
                                     this.user.setCompanyName(JSON.stringify(result.value.company));
-                            }
+                                }
                             })
                             .catch(error => console.log("Error: " + error));
                             console.log("after login" + this.user.getUserId());
                             this.router.navigate(["/cards"])
                         })
-            .catch((error) => console.log(error));
+            .catch((error => {
+                console.log(error),
+                dialogs.alert({
+                    title: "Incorrect Username or Password",
+                    message: "If you do not have an account, you can create one by clicking \"Sign Up \" below.",
+                    okButtonText: "OK"
+                }).then(() => {
+                    console.log("Dialog closed!");
+                })
+            }
+            ));
     }
 
     routeSignup(): void {
         this.router.navigate(["/signup"]);
     }
-}
+}//

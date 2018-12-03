@@ -16,14 +16,9 @@
 </ActionBar>
 
 <StackLayout class="p-20">
-    <Button text="Scan Barcode" (tap)="onScan()" class="btn btn-primary btn-active scan-button"></Button>
-    <Label text="Barcode Format:" class="info-label"></Label>
-    <TextField hint="Barcode Format" [(ngModel)]="this.barcodeFormat" class="input-field"></TextField>
-    <Label text="Barcode ID:" class="info-label"></Label>
-    <TextField hint="Barcode ID" [(ngModel)]="this.barcodeData" class="input-field"></TextField>
     <Label text="Promotion Name:" class="info-label"></Label>
-    <TextField hint="Promotion Name" [(ngModel)]="this.cardName" class="input-field"></TextField>
-    <Label text="Location:" class="info-label"></Label>
-    <TextField hint="Location" [(ngModel)]="this.cardLocation" class="input-field"></TextField>
+    <TextField hint="Promotion Name" [(ngModel)]="this.promoName" class="input-field"></TextField>
+    <Label text="Description:" class="info-label"></Label>
+    <TextField hint="Description" [(ngModel)]="this.promoDesc" class="input-field"></TextField>
     <Button text="Create Promotion" class="btn btn-primary btn-active" (tap)="createPromotion()"></Button>
 </StackLayout>

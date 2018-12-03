@@ -7,10 +7,12 @@ var app = require("application");
 var router_2 = require("nativescript-angular/router");
 var nativescript_ui_sidedrawer_1 = require("nativescript-ui-sidedrawer");
 var operators_1 = require("rxjs/operators");
+var user_1 = require("./user");
 var AppComponent = /** @class */ (function () {
-    function AppComponent(router, routerExtensions) {
+    function AppComponent(router, routerExtensions, user) {
         this.router = router;
         this.routerExtensions = routerExtensions;
+        this.user = user;
         // Use the component constructor to inject services.
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -23,6 +25,7 @@ var AppComponent = /** @class */ (function () {
     };
     Object.defineProperty(AppComponent.prototype, "sideDrawerTransition", {
         get: function () {
+            this.companyStatus = this.user.getCompany();
             return this._sideDrawerTransition;
         },
         enumerable: true,
@@ -44,9 +47,13 @@ var AppComponent = /** @class */ (function () {
         core_1.Component({
             moduleId: module.id,
             selector: "ns-app",
-            templateUrl: "app.component.html"
+            templateUrl: "app.component.html",
+            styleUrls: ["app.component.css"]
         }),
         tslib_1.__metadata("design:paramtypes", [router_1.Router, router_2.RouterExtensions])
+        __metadata("design:paramtypes", [router_1.Router,
+            router_2.RouterExtensions,
+            user_1.User])
     ], AppComponent);
     return AppComponent;
 }());
