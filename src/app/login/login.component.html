@@ -16,9 +16,10 @@
             <TextField  [(ngModel)]="this.password" id="password" class="input" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         
-        <Button id = "login" class="login_button" text="Log In" (tap)="routeKeychainCard($event)"></Button>
-    </StackLayout>
-  
-    <Label class="signup" text="Don't have an account? Sign Up" (tap)="routeSignup()"></Label>
+        <Button id = "login" class="btn btn-primary btn-active login-button" text="Log In" (tap)="routeKeychainCard($event)"></Button>
+    
+        <Label class="signup" text="Don't have an account? Sign Up" (tap)="routeSignup()"></Label>
+</StackLayout>
+
 </FlexboxLayout>
 </Page>
