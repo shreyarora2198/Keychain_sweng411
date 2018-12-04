@@ -36,6 +36,7 @@ export class CardsComponent implements OnInit {
     barcodeFormat: string = "";
     barcodes: [string[]]= [[]]; 
     individualBarcode: string[] = [];
+
     constructor(private router: Router,
                 private user: User,
                 private keychaincardclass: KeychainCardClass) {
@@ -48,30 +49,31 @@ export class CardsComponent implements OnInit {
             for(var item in result.value){
                 firebase.getValue('/users/'+this.user.getUserId()+'/Keychains/'+item)
                 .then(result=>{
-                    console.log(JSON.stringify(result.value.Data) +" is the data result");
-                    console.log(JSON.stringify(result.value.Format) +" is the format result");
-                    console.log(JSON.stringify(result.value.cardLocation) +" is the location result");
-                    console.log(JSON.stringify(result.value.cardName) +" is the name result");
+                    
                     this.individualBarcode = [] ;
                     this.individualBarcode.push(result.value.Data);
                     this.individualBarcode.push(result.value.Format);
                     this.individualBarcode.push(result.value.cardLocation);
                     this.individualBarcode.push(result.value.cardName);
                     this.barcodes.unshift(this.individualBarcode);
+
                 })
+                
             }
         })
         .catch(error => console.log("Error: " + error));
-        
         setTimeout(()=>{
+
             for(var i = 0;i < this.barcodes.length;i++){
                 this.cardsForList.push(new KeychainCard(this.barcodes[i][0], this.barcodes[i][1], this.barcodes[i][2], this.barcodes[i][3]));
+              
                 for(var j =0;j<this.barcodes[i].length;j++){
                     console.log();
                     console.log("Keychain "+i+": "+this.barcodes[i][j]);
                 }
             }
         }, 500);
+
     }
 
     onDrawerButtonTap(): void {
