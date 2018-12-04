@@ -85,15 +85,12 @@ export class CardsComponent implements OnInit {
 
     public onItemTap(args) {
         console.log("Item Tapped at cell index: " + args.index);
-        this.keychaincardclass.setBarcodeFormat(this.barcodes[args.index][0]);
-        this.keychaincardclass.setBarcodeId(this.barcodes[args.index][1]);
+        this.keychaincardclass.setBarcodeId(this.barcodes[args.index][0]);
+        this.keychaincardclass.setBarcodeFormat(this.barcodes[args.index][1]);
         this.keychaincardclass.setCardLocation(this.barcodes[args.index][2]);
         this.keychaincardclass.setCardName(this.barcodes[args.index][3]);
 
-        console.log(this.keychaincardclass.getBarcodeFormat());
-        console.log(this.keychaincardclass.getBarcodeId());
-        console.log(this.keychaincardclass.getCardLocation());
-        console.log(this.keychaincardclass.getCardName());
+        this.router.navigate(["/view-card"]);
     }
 
 }
