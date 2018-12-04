@@ -28,7 +28,7 @@ export class CardsComponent implements OnInit {
     constructor(private router: Router, private user: User) {
         // Use the component constructor to inject providers.
     }
-    async firebase(){
+    // async firebase(){
         
             // return Promise.resolve(1);
             // console.log("blah"+barcodes.length);
@@ -45,7 +45,7 @@ export class CardsComponent implements OnInit {
         //     format: this.barcodeFormat//format
         // });
         // barcodeImage.imageSource = ImageSource.fromNativeSource(newImg);
-    }
+    // }
     ngOnInit() {
         //     this.firebase().then(()=>{
         //         console.log("here");
@@ -72,13 +72,13 @@ export class CardsComponent implements OnInit {
                     this.individualBarcode.push(JSON.stringify(result.value.cardLocation));
                     this.individualBarcode.push(JSON.stringify(result.value.cardName));
                     this.barcodes.push(this.individualBarcode);
+                    console.log(result.value.length);
                 })
+                console.log("hello2");
             }
         })
         .catch(error => console.log("Error: " + error));
-        
         setTimeout(()=>{
-            console.log("size");
             for(var i = 0;i< this.barcodes.length;i++){
                 for(var j =0;j<this.barcodes[i].length;j++){
                     console.log();
@@ -86,7 +86,7 @@ export class CardsComponent implements OnInit {
                 }
             }
         }, 500);
-    
+
     }
 
     onDrawerButtonTap(): void {
