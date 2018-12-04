@@ -55,7 +55,12 @@ export class LoginComponent implements OnInit {
                             })
                             .catch(error => console.log("Error: " + error));
                             console.log("after login" + this.user.getUserId());
-                            this.router.navigate(["/cards"])
+                            if(this.user.getCompany()) {
+                                this.router.navigate(["/cards"]);
+                            }
+                            else {
+                                this.router.navigate(["/create-promotion"]);
+                            }
                         })
             .catch((error => {
                 console.log(error),
