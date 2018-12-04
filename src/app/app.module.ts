@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { User } from "./user";
 import { KeychainCardClass } from "./keychain-card";
+import { PromotionClass } from "./promotion";
 
 import firebase = require('nativescript-plugin-firebase');
 import { BarcodeScanner } from "nativescript-barcodescanner";
@@ -37,7 +38,8 @@ firebase.init().then(()=>{
     providers: [
         BarcodeScanner,
         User,
-        KeychainCardClass
+        KeychainCardClass,
+        PromotionClass
     ]
 })
 export class AppModule { }

@@ -5,7 +5,13 @@ import { initFirebaseMessaging } from 'nativescript-plugin-firebase/messaging/me
 const firebase = require("nativescript-plugin-firebase");
 const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import {User} from "../user";
+import { PromotionClass } from "../promotion";
 import { Router } from "@angular/router";
+
+class Promotion{
+    constructor(public companyName: string) { }
+}
+
 @Component({
     selector: "Promotions",
     moduleId: module.id,
@@ -13,11 +19,17 @@ import { Router } from "@angular/router";
     templateUrl: "./promotions.component.html"
 })
 export class PromotionsComponent implements OnInit {
+
     companyPromotions: [string[]] = [[]];
     promotions: [[string[]]] = [[[]]];
     individualPromotion: string[] = [];
-    constructor(private router: Router, private user: User) {
-        // Use the component constructor to inject providers.
+
+    public promotionsForList: Array<Promotion>;
+
+    constructor(private router: Router,
+                private user: User,
+                private promotionclass: PromotionClass) {
+        this.promotionsForList = [];
     }
 
     ngOnInit(): void {
@@ -25,17 +37,22 @@ export class PromotionsComponent implements OnInit {
         firebase.getValue('/promotions/')
         .then((result)=>{
             for(var item in result.value){
-                this.companyPromotions= [[]];
+                while(this.companyPromotions.length > 0) {
+                    this.companyPromotions.pop();
+                }
                 // console.log("company name: "+item);
                 this.getPromotions(item);
-                this.promotions.push(this.companyPromotions);
+                this.promotions.unshift(this.companyPromotions);
             }
         }
         )
         .catch(error=>console.log("Error"+error))
         setTimeout(()=>{
-            
-        }, 4000);
+            for(var i = 0;i < this.promotions.length;i++){
+                //console.log(this.promotions[0][0][0]);
+                this.promotionsForList.push(new Promotion(this.promotions[i][0][0]));
+            }
+        }, 1000);
     }
 
     getPromotions(item){
@@ -43,7 +60,9 @@ export class PromotionsComponent implements OnInit {
         firebase.getValue('/promotions/'+item)
                 .then(resultPromo=>{
                     for(var promo in resultPromo.value){
-                        this.individualPromotion =[];
+                        while(this.individualPromotion.length > 0) {
+                            this.individualPromotion.pop();
+                        }
                         firebase.getValue('/promotions/'+item+'/'+promo)
                         .then(finalResult => {
                             console.log("company Name"+item);
@@ -53,6 +72,12 @@ export class PromotionsComponent implements OnInit {
                             this.individualPromotion.push(finalResult.value.promoName);
                             this.individualPromotion.push(finalResult.value.promoDesc);
                             this.companyPromotions.push(this.individualPromotion);
+                            for(let i=1; i<this.companyPromotions.length; i++) {
+                                for(let j=1; j<4; j++) {
+                                    console.log("test1: " + this.companyPromotions[i][j]);
+                                    console.log("test2: " + this.companyPromotions.length);
+                                }
+                            }
                         })
                     }
                 }
@@ -63,5 +88,13 @@ export class PromotionsComponent implements OnInit {
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
+    }
+
+    public onItemTap(args) {
+        console.log("Item Tapped at cell index: " + args.index);
+        this.promotionclass.setCompanyName(this.promotions[args.index][0][0]);
+        this.promotionclass.setCompanyPromotions(this.promotions[args.index]);
+
+        //this.router.navigate(["/view-card"]);
     }
 }
