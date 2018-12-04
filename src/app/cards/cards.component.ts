@@ -72,7 +72,7 @@ export class CardsComponent implements OnInit {
                     console.log("Keychain "+i+": "+this.barcodes[i][j]);
                 }
             }
-        }, 500);
+        }, 1000);
 
     }
 

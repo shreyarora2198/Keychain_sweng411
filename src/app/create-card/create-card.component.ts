@@ -68,6 +68,7 @@ export class CreateCardComponent implements OnInit {
             }
         );
         console.log('/users/'+this.user.getUserId()+'/Keychains');
+        
         this.router.navigate(["/cards"]);
     }
 }
