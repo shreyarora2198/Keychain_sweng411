@@ -6,6 +6,7 @@ import { Image } from "tns-core-modules/ui/image";
 import { TextField } from "ui/text-field";
 import { User } from "../user";
 import { createInjector } from "@angular/core/src/view/refs";
+import { KeychainCardClass } from "../keychain-card";
 
 const firebase = require("nativescript-plugin-firebase");
 const firebaseWebApi = require("nativescript-plugin-firebase/app");
@@ -36,7 +37,8 @@ export class CardsComponent implements OnInit {
     barcodes: [string[]]= [[]]; 
     individualBarcode: string[] = [];
     constructor(private router: Router,
-                private user: User) {
+                private user: User,
+                private keychaincardclass: KeychainCardClass) {
         this.cardsForList = [];
     }
     
@@ -83,6 +85,15 @@ export class CardsComponent implements OnInit {
 
     public onItemTap(args) {
         console.log("Item Tapped at cell index: " + args.index);
+        this.keychaincardclass.setBarcodeFormat(this.barcodes[args.index][0]);
+        this.keychaincardclass.setBarcodeId(this.barcodes[args.index][1]);
+        this.keychaincardclass.setCardLocation(this.barcodes[args.index][2]);
+        this.keychaincardclass.setCardName(this.barcodes[args.index][3]);
+
+        console.log(this.keychaincardclass.getBarcodeFormat());
+        console.log(this.keychaincardclass.getBarcodeId());
+        console.log(this.keychaincardclass.getCardLocation());
+        console.log(this.keychaincardclass.getCardName());
     }
 
 }
