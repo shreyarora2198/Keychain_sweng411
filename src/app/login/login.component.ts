@@ -47,20 +47,16 @@ export class LoginComponent implements OnInit {
                                 if(result.value === null){
                                     this.user.setCompany(false);
                                     this.user.setCompanyName(null);
+                                    this.router.navigate(["/cards"])
                                 }
                                 else {
                                     this.user.setCompany(true);
                                     this.user.setCompanyName(JSON.stringify(result.value.company));
+                                    this.router.navigate(["/create-promotion"])
                                 }
                             })
                             .catch(error => console.log("Error: " + error));
                             console.log("after login" + this.user.getUserId());
-                            if(this.user.getCompany()) {
-                                this.router.navigate(["/cards"]);
-                            }
-                            else {
-                                this.router.navigate(["/create-promotion"]);
-                            }
                         })
             .catch((error => {
                 console.log(error),
