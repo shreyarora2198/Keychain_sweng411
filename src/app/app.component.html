@@ -10,7 +10,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
     
         <ScrollView row="1">
             <StackLayout class="sidedrawer-content">
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/cards')" (tap)="onNavItemTap('/cards')">
+                <GridLayout visibility="{{this.companyStatus ? 'collapsed' : 'visible'}}" columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/cards')" (tap)="onNavItemTap('/cards')">
                     <Label col="1" text="Keychain Cards" class="nav-item"></Label>
                 </GridLayout>   
 
