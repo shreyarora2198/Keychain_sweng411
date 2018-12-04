@@ -1,19 +1,19 @@
-<!-- <StackLayout>
-    <Label text="Signup"></Label>
-    <Button text="Goto Login" (tap)="routeLogin()"></Button>
-</StackLayout> -->
+<ActionBar class="action-bar">
+    <Label></Label>
+</ActionBar>
+
 <Page>
     <StackLayout class="layout">
 
         <StackLayout class="input-field">
-            <TextField class="input" [(ngModel)]="this.email" hint="Enter Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField class="input" [(ngModel)]="this.email" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         <StackLayout class="input-field">
-            <TextField class="input" [(ngModel)]= "this.password" hint="Enter Password" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField class="input" [(ngModel)]= "this.password" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
 
         <StackLayout *ngIf="isCompanyUser" class="input-field">
-                <TextField class="input" [(ngModel)]= "this.company" hint="Enter Company Name" autocorrect="false" autocapitalizationType="none"></TextField>
+                <TextField class="input" [(ngModel)]= "this.company" hint="Company Name" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
 
         <StackLayout class="button-field">
