@@ -6,11 +6,20 @@ import { Image } from "tns-core-modules/ui/image";
 import { TextField } from "ui/text-field";
 import { User } from "../user";
 import { createInjector } from "@angular/core/src/view/refs";
+import { KeychainCardClass } from "../keychain-card";
+
 const firebase = require("nativescript-plugin-firebase");
 const firebaseWebApi = require("nativescript-plugin-firebase/app");
-
 const ZXing = require("nativescript-zxing");
 const ImageSource = require("image-source");
+
+class KeychainCard {
+    constructor(public barcodeId: string,
+                public barcodeFormat: string,
+                public cardLoc: string,
+                public cardName: string) { }
+}
+
 @Component({
     selector: "Cards",
     moduleId: module.id,
@@ -20,46 +29,23 @@ const ImageSource = require("image-source");
 
 export class CardsComponent implements OnInit {
 
+    public cardsForList: Array<KeychainCard>;
+
     @ViewChild("barcodeImg") barcodeImg: ElementRef;
     barcodeData: string = "";
     barcodeFormat: string = "";
     barcodes: [string[]]= [[]]; 
     individualBarcode: string[] = [];
-    constructor(private router: Router, private user: User) {
-        // Use the component constructor to inject providers.
+    constructor(private router: Router,
+                private user: User,
+                private keychaincardclass: KeychainCardClass) {
+        this.cardsForList = [];
     }
-    async firebase(){
-        
-            // return Promise.resolve(1);
-            // console.log("blah"+barcodes.length);
-            // for(var i = 0;i< barcodes.length;i++){
-            //     for(var j =0;j<barcodes[i].length;j++){
-            //         console.log("Keychain "+i+": "+barcodes[i][j]);
-            //     }
-            // }
-        
-        // const barcodeImage = <Image>this.barcodeImg.nativeElement;
-        // const zx = new ZXing();
-        // const newImg = zx.createBarcode({
-        //     encode: this.barcodeData,//data
-        //     format: this.barcodeFormat//format
-        // });
-        // barcodeImage.imageSource = ImageSource.fromNativeSource(newImg);
-    }
+    
     ngOnInit() {
-        //     this.firebase().then(()=>{
-        //         console.log("here");
-        // });
-        // this.firebase();
-        // for(var i = 0;i< this.barcodes.length;i++){
-        //     for(var j =0;j<this.barcodes[i].length;j++){
-        //         console.log("Keychain "+i+": "+this.barcodes[i][j]);
-        //     }
-        // }
         firebase.getValue('/users/'+this.user.getUserId()+'/Keychains')
         .then(result => {
             for(var item in result.value){
-                // console.log("result"+JSON.stringify(item));
                 firebase.getValue('/users/'+this.user.getUserId()+'/Keychains/'+item)
                 .then(result=>{
                     console.log(JSON.stringify(result.value.Data) +" is the data result");
@@ -67,47 +53,44 @@ export class CardsComponent implements OnInit {
                     console.log(JSON.stringify(result.value.cardLocation) +" is the location result");
                     console.log(JSON.stringify(result.value.cardName) +" is the name result");
                     this.individualBarcode = [] ;
-                    this.individualBarcode.push(JSON.stringify(result.value.Data));
-                    this.individualBarcode.push(JSON.stringify(result.value.Format));
-                    this.individualBarcode.push(JSON.stringify(result.value.cardLocation));
-                    this.individualBarcode.push(JSON.stringify(result.value.cardName));
-                    this.barcodes.push(this.individualBarcode);
+                    this.individualBarcode.push(result.value.Data);
+                    this.individualBarcode.push(result.value.Format);
+                    this.individualBarcode.push(result.value.cardLocation);
+                    this.individualBarcode.push(result.value.cardName);
+                    this.barcodes.unshift(this.individualBarcode);
                 })
             }
         })
         .catch(error => console.log("Error: " + error));
         
         setTimeout(()=>{
-            console.log("size");
-            for(var i = 0;i< this.barcodes.length;i++){
+            for(var i = 0;i < this.barcodes.length;i++){
+                this.cardsForList.push(new KeychainCard(this.barcodes[i][0], this.barcodes[i][1], this.barcodes[i][2], this.barcodes[i][3]));
                 for(var j =0;j<this.barcodes[i].length;j++){
                     console.log();
                     console.log("Keychain "+i+": "+this.barcodes[i][j]);
                 }
             }
         }, 500);
-    
     }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
     }
-    // snapshotToArray(snapshot){
-    //     var returnArr =[];
-    //     snapshot.forEach(function(childSnapshot){
-    //         var item = childSnapshot.val();
-    //         item.key = childSnapshot.key;
 
-    //         returnArr.push(item);
-    //     });
-    //     return returnArr;
-    // }
     navigateViewCard() {
         this.router.navigate(["/view-card"]);
     }
-    viewBarcodeInfo(){
-        
+
+    public onItemTap(args) {
+        console.log("Item Tapped at cell index: " + args.index);
+        this.keychaincardclass.setBarcodeId(this.barcodes[args.index][0]);
+        this.keychaincardclass.setBarcodeFormat(this.barcodes[args.index][1]);
+        this.keychaincardclass.setCardLocation(this.barcodes[args.index][2]);
+        this.keychaincardclass.setCardName(this.barcodes[args.index][3]);
+
+        this.router.navigate(["/view-card"]);
     }
 
 }

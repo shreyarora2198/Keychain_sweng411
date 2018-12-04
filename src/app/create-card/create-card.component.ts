@@ -4,6 +4,8 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { BarcodeScanner } from "nativescript-barcodescanner";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { User } from "../user";
+import { Router } from "@angular/router";
+
 const firebase = require("nativescript-plugin-firebase");
 const firebaseWebApi = require("nativescript-plugin-firebase/app");
 
@@ -20,8 +22,9 @@ export class CreateCardComponent implements OnInit {
     cardName: string = "";
     cardLocation: string = "";
 
-    constructor(private barcodescanner: BarcodeScanner
-                ,private user: User) {
+    constructor(private barcodescanner: BarcodeScanner,
+                private user: User,
+                private router: Router) {
         // Use the component constructor to inject providers.
     }
 
@@ -65,5 +68,6 @@ export class CreateCardComponent implements OnInit {
             }
         );
         console.log('/users/'+this.user.getUserId()+'/Keychains');
+        this.router.navigate(["/cards"]);
     }
 }
