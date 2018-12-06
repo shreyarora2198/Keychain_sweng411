@@ -8,8 +8,9 @@
 </StackLayout> -->
 <Page id="page" (loaded)="pageLoaded($event)">
 <FlexboxLayout class="page" loaded = "pageLoaded">
-    <StackLayout class="form">
-        <Label class="title" text="KEYCHAIN"></Label>
+<Image src="~/images/Keychain_Logo.png" width="300" class="logo"></Image>
+<StackLayout class="form">
+        <!-- <Label class="title" text="KEYCHAIN"></Label> -->
 
         <StackLayout class="input-field">
             <TextField [(ngModel)]="this.email" id ="email" class="input" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
@@ -21,7 +22,12 @@
         
         <Button id = "login" class="btn btn-primary btn-active login-button" text="Log In" (tap)="routeKeychainCard($event)"></Button>
     
-        <Label class="signup" text="Don't have an account? Sign Up" (tap)="routeSignup()"></Label>
+        <Label class="signup" (tap)="routeSignup()">
+            <FormattedString>
+                <Span text="Don't have an account? "></Span>
+                <Span text="Sign Up" class="underline"></Span>
+            </FormattedString>
+        </Label>
 </StackLayout>
 
 </FlexboxLayout>
