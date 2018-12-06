@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Company } from "../company";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "application";
+import * as dialogs from "tns-core-modules/ui/dialogs";
 const firebase = require("nativescript-plugin-firebase");
 
 class Promotion {
@@ -23,10 +24,12 @@ export class ViewPromotionsComponent implements OnInit {
     items = [];
     index = 0;
     promotionsForList: Array<Promotion>;
+    companyName: string;
 
     constructor(private company: Company) {
         // Use the component constructor to inject providers.
         this.promotionsForList = [];
+        this.companyName = this.company.getCompanyName();
     }
     ngOnInit(): void {
         // Init your component properties here.
@@ -76,6 +79,18 @@ export class ViewPromotionsComponent implements OnInit {
             this.promotions.push(this.promoInfo);
             this.index++;
             this.checkPromotions(length);
+        })
+    }
+
+    onItemTap(args) {
+        console.log("Item Tapped at cell index: " + args.index);
+        
+        dialogs.alert({
+            title: this.promotionsForList[args.index].promotionName,
+            message: this.promotionsForList[args.index].promotionDesc,
+            okButtonText: "OK"
+        }).then(() => {
+            console.log("Dialog closed!");
         })
     }
 }

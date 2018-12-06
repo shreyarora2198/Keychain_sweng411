@@ -122,14 +122,9 @@ export class CardsComponent implements OnInit {
             console.log("after promise");
             for(var i = 0;i < this.barcodes.length;i++){
                 this.cardsForList.push(new KeychainCard(this.barcodes[i][0], this.barcodes[i][1], this.barcodes[i][2], this.barcodes[i][3]));
-            
-                for(var j =0;j<this.barcodes[i].length;j++){
-                    console.log();
-                    console.log("Keychain "+i+": "+this.barcodes[i][j]);
-                }
             }
+            this.cardsForList.pop();
         }
-        // return 1;
     }
 
 }

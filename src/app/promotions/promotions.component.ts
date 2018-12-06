@@ -20,12 +20,8 @@ class Promotion{
 })
 export class PromotionsComponent implements OnInit {
 
-    companyPromotions: [string[]] = [[]];
-    promotions: [[string[]]] = [[[]]];
-    individualPromotion: string[] = [];
     companyResult = null;
     companyNames = [];
-    companyNamesFinal =[];
     indexCompanies = 0;
     public promotionsForList: Array<Promotion>;
 

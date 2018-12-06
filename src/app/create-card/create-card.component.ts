@@ -68,7 +68,13 @@ export class CreateCardComponent implements OnInit {
             }
         );
         console.log('/users/'+this.user.getUserId()+'/Keychains');
-        
+        dialogs.alert({
+            title: "Successful",
+            message: "Keychain card created!",
+            okButtonText: "OK"
+        }).then(() => {
+            console.log("Dialog closed!");
+        })
         this.router.navigate(["/cards"]);
     }
 }

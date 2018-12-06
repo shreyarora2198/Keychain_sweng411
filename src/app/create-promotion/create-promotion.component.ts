@@ -3,6 +3,8 @@ import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { BarcodeScanner } from "nativescript-barcodescanner";
 import { User } from "../user";
+import { Router } from "@angular/router";
+import * as dialogs from "tns-core-modules/ui/dialogs";
 const firebase = require("nativescript-plugin-firebase");
 const firebaseWebApi = require("nativescript-plugin-firebase/app");
 
@@ -17,8 +19,8 @@ export class CreatePromotionComponent implements OnInit {
     promoName: string = "";
     promoDesc: string = ""
 
-    constructor(private barcodescanner: BarcodeScanner
-                ,private user: User) {
+    constructor(private user: User,
+                private router: Router) {
         // Use the component constructor to inject providers.
     }
 
@@ -42,6 +44,13 @@ export class CreatePromotionComponent implements OnInit {
                 promoDesc: this.promoDesc
             }
         );
-
+        dialogs.alert({
+            title: "Successful",
+            message: "Promotion published!",
+            okButtonText: "OK"
+        }).then(() => {
+            console.log("Dialog closed!");
+        })
+        this.router.navigate(["/promotions"]);
     }
 }
