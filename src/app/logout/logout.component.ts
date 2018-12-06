@@ -12,7 +12,6 @@ import { Router } from "@angular/router";
 export class LogoutComponent implements OnInit {
 
     constructor(private router: Router) {
-        // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {

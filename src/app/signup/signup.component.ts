@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 var firebase = require("nativescript-plugin-firebase");
-var firebaseWebApi = require("nativescript-plugin-firebase/app");
 @Component({
     selector: "Signup",
     moduleId: module.id,
@@ -15,7 +14,6 @@ export class SignupComponent implements OnInit {
     isCompanyUser = false;
 
     constructor(private router: Router) {
-        // Use the component constructor to inject providers.
     }   
 
     ngOnInit(): void {
@@ -23,7 +21,6 @@ export class SignupComponent implements OnInit {
     }
 
     routeLogin(): void {
-        console.log(this.isCompanyUser);
         firebase.createUser(
             {
                 email: this.email,
@@ -33,7 +30,6 @@ export class SignupComponent implements OnInit {
         )
         .then((userRecord)=> {
           // See the UserRecord reference doc for the contents of userRecord
-          console.log("Successfully created new user:", userRecord.uid);
           if(this.isCompanyUser){
               firebase.setValue(
                 '/companies'+'/'+JSON.stringify(userRecord.uid),
@@ -51,7 +47,6 @@ export class SignupComponent implements OnInit {
           this.router.navigate(["/login"]);
         })
         .catch(function(error) {
-          console.log("Error creating new user:", error);
         });
     }
 

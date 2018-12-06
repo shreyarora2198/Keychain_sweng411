@@ -7,7 +7,6 @@ import { User } from "../user";
 import { Router } from "@angular/router";
 
 const firebase = require("nativescript-plugin-firebase");
-const firebaseWebApi = require("nativescript-plugin-firebase/app");
 
 @Component({
     selector: "CreateCard",
@@ -25,7 +24,6 @@ export class CreateCardComponent implements OnInit {
     constructor(private barcodescanner: BarcodeScanner,
                 private user: User,
                 private router: Router) {
-        // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
@@ -46,18 +44,14 @@ export class CreateCardComponent implements OnInit {
             torchOn: false,
             resultDisplayDuration: 500
         }).then((result) => {
-            console.log("Format: " + result.format + ",\nConent: " + result.text);
             this.barcodeFormat = result.format;
             this.barcodeData = result.text;
         }, (errorMessage) => {
-            console.log("Error when scanning " + errorMessage);
+            alert("Error: " + errorMessage);
         });
     }
 
-    createCard() {
-        console.log("CREATING CARD...\nFormat: " + this.barcodeFormat + "\nData: " + this.barcodeData
-            + "\nName: " + this.cardName + "\nLocation: " + this.cardLocation);
-        
+    createCard() {        
         firebase.push(
             '/users/'+this.user.getUserId()+'/Keychains',
             {
@@ -67,14 +61,13 @@ export class CreateCardComponent implements OnInit {
                 cardLocation: this.cardLocation
             }
         );
-        console.log('/users/'+this.user.getUserId()+'/Keychains');
         dialogs.alert({
             title: "Successful",
             message: "Keychain card created!",
             okButtonText: "OK"
         }).then(() => {
-            console.log("Dialog closed!");
+            this.router.navigate(["/cards"]);
+
         })
-        this.router.navigate(["/cards"]);
     }
 }

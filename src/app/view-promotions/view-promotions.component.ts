@@ -27,7 +27,6 @@ export class ViewPromotionsComponent implements OnInit {
     companyName: string;
 
     constructor(private company: Company) {
-        // Use the component constructor to inject providers.
         this.promotionsForList = [];
         this.companyName = this.company.getCompanyName();
     }
@@ -45,7 +44,6 @@ export class ViewPromotionsComponent implements OnInit {
         var length = 0;
         for(var item in this.result.value){
             this.items.push(item);
-            console.log("item"+item);
             length++;
         }
         return length;
@@ -72,7 +70,6 @@ export class ViewPromotionsComponent implements OnInit {
     getPromotions(length){
         firebase.getValue('/promotions/'+this.company.getCompanyName()+'/'+this.items.pop())
         .then(result=>{
-            console.log("company"+this.company.getCompanyName());
             this.promoInfo =[];
             this.promoInfo.push(result.value.promoName);
             this.promoInfo.push(result.value.promoDesc);
@@ -83,14 +80,12 @@ export class ViewPromotionsComponent implements OnInit {
     }
 
     onItemTap(args) {
-        console.log("Item Tapped at cell index: " + args.index);
         
         dialogs.alert({
             title: this.promotionsForList[args.index].promotionName,
             message: this.promotionsForList[args.index].promotionDesc,
             okButtonText: "OK"
         }).then(() => {
-            console.log("Dialog closed!");
         })
     }
 }

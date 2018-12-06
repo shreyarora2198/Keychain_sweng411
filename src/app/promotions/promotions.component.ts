@@ -1,9 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { initFirebaseMessaging } from 'nativescript-plugin-firebase/messaging/messaging';
 const firebase = require("nativescript-plugin-firebase");
-const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import {User} from "../user";
 import { Company } from "../company";
 import { Router } from "@angular/router";
@@ -39,7 +37,7 @@ export class PromotionsComponent implements OnInit {
             var lengthCompanies = this.getLengthCompanies();
             this.checkCompanies(lengthCompanies);
         })
-        .catch(error=>console.log("Error"+error));
+        .catch(error=>alert("Error: "+ error));
     }
 
     onDrawerButtonTap(): void {
@@ -48,7 +46,6 @@ export class PromotionsComponent implements OnInit {
     }
 
     public onItemTap(args) {
-        console.log("Item Tapped at cell index: " + args.index);
         this.company.setCompanyName(this.companyNames[args.index]);
         this.router.navigate(["/view-promotions"]);
     }
@@ -66,13 +63,10 @@ export class PromotionsComponent implements OnInit {
         if(this.indexCompanies<lengthCompanies){
             this.getCompaniesNames(lengthCompanies);
         }
-        else{
-            //add to promotions for list
-            // this.companyNamesFinal = this.companyNames;
-        }
     }
 
     getCompaniesNames(lengthCompanies){
         this.indexCompanies++;
+        this.checkCompanies(lengthCompanies);
     }
 }
