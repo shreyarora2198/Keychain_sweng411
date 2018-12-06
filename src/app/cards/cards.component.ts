@@ -32,6 +32,9 @@ export class CardsComponent implements OnInit {
     public cardsForList: Array<KeychainCard>;
 
     @ViewChild("barcodeImg") barcodeImg: ElementRef;
+    items = [];
+    result = null;
+    index = 0;
     barcodeData: string = "";
     barcodeFormat: string = "";
     barcodes: [string[]]= [[]]; 
@@ -46,33 +49,22 @@ export class CardsComponent implements OnInit {
     ngOnInit() {
         firebase.getValue('/users/'+this.user.getUserId()+'/Keychains')
         .then(result => {
-            for(var item in result.value){
-                firebase.getValue('/users/'+this.user.getUserId()+'/Keychains/'+item)
-                .then(result=>{
-                    
-                    this.individualBarcode = [] ;
-                    this.individualBarcode.push(result.value.Data);
-                    this.individualBarcode.push(result.value.Format);
-                    this.individualBarcode.push(result.value.cardLocation);
-                    this.individualBarcode.push(result.value.cardName);
-                    this.barcodes.unshift(this.individualBarcode);
-
-                })
-                
-            }
+            //function to get length of keychains
+            this.result = result;
+            // console.log(this.result);
+            var length = this.getLength();
+            console.log("i am here");
+            this.checkKeychains(length);
+            
+            // while(this.index!=length){
+            // }
+            
+            
         })
         .catch(error => console.log("Error: " + error));
-        setTimeout(()=>{
-
-            for(var i = 0;i < this.barcodes.length;i++){
-                this.cardsForList.push(new KeychainCard(this.barcodes[i][0], this.barcodes[i][1], this.barcodes[i][2], this.barcodes[i][3]));
-              
-                for(var j =0;j<this.barcodes[i].length;j++){
-                    console.log();
-                    console.log("Keychain "+i+": "+this.barcodes[i][j]);
-                }
-            }
-        }, 1000);
+        // setTimeout(()=>{
+            
+        // }, 1000);
 
     }
 
@@ -93,6 +85,51 @@ export class CardsComponent implements OnInit {
         this.keychaincardclass.setCardName(this.barcodes[args.index][3]);
 
         this.router.navigate(["/view-card"]);
+    }
+
+    getLength(){
+        var length = 0;
+        for(var item in this.result.value){
+            this.items.push(item);
+            length++;
+        }
+        console.log("length is "+length);
+        return length;
+    }
+
+    getKeychains(length){
+        // for(var item in this.result.value){
+            firebase.getValue('/users/'+this.user.getUserId()+'/Keychains/'+this.items.pop())
+            .then(result=>{
+                console.log("get keychains");
+                this.individualBarcode = [] ;
+                this.individualBarcode.push(result.value.Data);
+                this.individualBarcode.push(result.value.Format);
+                this.individualBarcode.push(result.value.cardLocation);
+                this.individualBarcode.push(result.value.cardName);
+                this.barcodes.unshift(this.individualBarcode);
+                this.index ++;
+                this.checkKeychains(length);
+            })
+        // }
+    }
+
+    checkKeychains(length){
+        if(this.index< length){
+            console.log("checkKeychains");
+            this.getKeychains(length);
+        }else{
+            console.log("after promise");
+            for(var i = 0;i < this.barcodes.length;i++){
+                this.cardsForList.push(new KeychainCard(this.barcodes[i][0], this.barcodes[i][1], this.barcodes[i][2], this.barcodes[i][3]));
+            
+                for(var j =0;j<this.barcodes[i].length;j++){
+                    console.log();
+                    console.log("Keychain "+i+": "+this.barcodes[i][j]);
+                }
+            }
+        }
+        // return 1;
     }
 
 }

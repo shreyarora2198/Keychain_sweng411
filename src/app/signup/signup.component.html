@@ -17,7 +17,7 @@
         </StackLayout>
 
         <StackLayout class="button-field">
-            <Label class="company-button" [text]="isCompanyUser ? 'No, I am not a Company User' : 'Yes, I am a Company User'" (tap)="toggleCompanyUser()"></Label>
+            <Label class="company-button underline" [text]="isCompanyUser ? 'I am not a Company User' : 'I am a Company User'" (tap)="toggleCompanyUser()"></Label>
         </StackLayout>
         
         <StackLayout class="button-field">
