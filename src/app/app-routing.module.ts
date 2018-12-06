@@ -11,7 +11,8 @@ const routes: Routes = [
     { path: "create-card", loadChildren: "~/app/create-card/create-card.module#CreateCardModule"},
     { path: "create-promotion", loadChildren: "~/app/create-promotion/create-promotion.module#CreatePromotionModule"},
     { path: "logout", loadChildren: "~/app/logout/logout.module#LogoutModule" },
-    { path: "view-card", loadChildren: "~/app/view-card/view-card.module#ViewCardModule"}
+    { path: "view-card", loadChildren: "~/app/view-card/view-card.module#ViewCardModule"},
+    { path: "view-promotions", loadChildren:"~/app/view-promotions/view-promotions.module#ViewPromotionsModule"}
 ];
 
 @NgModule({
