@@ -12,13 +12,13 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" text="Promotions"></Label>
+    <Label class="action-bar-title" [text]="this.companyName"></Label>
 </ActionBar>
 
 <ListView [items]="promotionsForList" (itemTap)="onItemTap($event)" class="list-group">
     <ng-template let-promotion="item" let-i="index" let-odd="odd" let-even="even">
         <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
-        <StackLayout orientation="horizontal" class="list-group-item list-item">
+        <StackLayout orientation="horizontal" class="list-group-item list-item" textWrap="true">
             <Label [text]=promotion.promotionName></Label>
             <Label text=": "></Label>
             <Label [text]=promotion.promotionDesc></Label>

@@ -9,7 +9,7 @@
             <TextField class="input" [(ngModel)]="this.email" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
         <StackLayout class="input-field">
-            <TextField class="input" [(ngModel)]= "this.password" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField class="input" [(ngModel)]= "this.password" secure="true" hint="Password" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
 
         <StackLayout *ngIf="isCompanyUser" class="input-field">

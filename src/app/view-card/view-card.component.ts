@@ -2,10 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { Image } from "tns-core-modules/ui/image";
-import { TextField } from "ui/text-field";
 import { KeychainCardClass } from "../keychain-card";
-import { analytics } from 'nativescript-plugin-firebase';
-import { verticalAlignmentProperty } from 'tns-core-modules/ui/page/page';
 
 const ZXing = require("nativescript-zxing");
 const ImageSource = require("image-source");
@@ -166,8 +163,6 @@ export class ViewCardComponent implements OnInit {
                 });
                 this.barcodeImage.imageSource = ImageSource.fromNativeSource(this.newImg);
                 break;
-            default:
-                console.log("Invalid barcode format");
         }
     }  
 

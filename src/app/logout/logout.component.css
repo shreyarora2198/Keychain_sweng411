@@ -1,3 +1,9 @@
+.logout-label {
+    font-size: 24;
+    color: black;
+    text-align: center;
+}
+
 .logout-stack {
     padding-top: 200;
 }

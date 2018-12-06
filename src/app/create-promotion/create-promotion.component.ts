@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import * as app from "application";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { BarcodeScanner } from "nativescript-barcodescanner";
 import { User } from "../user";
+import { Router } from "@angular/router";
+import * as dialogs from "tns-core-modules/ui/dialogs";
 const firebase = require("nativescript-plugin-firebase");
-const firebaseWebApi = require("nativescript-plugin-firebase/app");
 
 @Component({
     selector: "CreatePromotion",
@@ -17,9 +17,8 @@ export class CreatePromotionComponent implements OnInit {
     promoName: string = "";
     promoDesc: string = ""
 
-    constructor(private barcodescanner: BarcodeScanner
-                ,private user: User) {
-        // Use the component constructor to inject providers.
+    constructor(private user: User,
+                private router: Router) {
     }
 
     ngOnInit(): void {
@@ -33,8 +32,6 @@ export class CreatePromotionComponent implements OnInit {
 
 
     createPromotion() {
-        console.log("\nCREATING PROMOTION...\nName: " 
-        + this.promoName + "\nDescription: " + this.promoDesc);
         firebase.push(
             'promotions/'+this.user.getCompanyName(),
             {
@@ -42,6 +39,12 @@ export class CreatePromotionComponent implements OnInit {
                 promoDesc: this.promoDesc
             }
         );
-
+        dialogs.alert({
+            title: "Successful",
+            message: "Promotion published!",
+            okButtonText: "OK"
+        }).then(() => {
+            this.router.navigate(["/promotions"]);
+        })
     }
 }

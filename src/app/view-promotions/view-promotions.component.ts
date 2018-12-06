@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Company } from "../company";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "application";
+import * as dialogs from "tns-core-modules/ui/dialogs";
 const firebase = require("nativescript-plugin-firebase");
 
 class Promotion {
@@ -23,10 +24,11 @@ export class ViewPromotionsComponent implements OnInit {
     items = [];
     index = 0;
     promotionsForList: Array<Promotion>;
+    companyName: string;
 
     constructor(private company: Company) {
-        // Use the component constructor to inject providers.
         this.promotionsForList = [];
+        this.companyName = this.company.getCompanyName();
     }
     ngOnInit(): void {
         // Init your component properties here.
@@ -42,7 +44,6 @@ export class ViewPromotionsComponent implements OnInit {
         var length = 0;
         for(var item in this.result.value){
             this.items.push(item);
-            console.log("item"+item);
             length++;
         }
         return length;
@@ -69,13 +70,22 @@ export class ViewPromotionsComponent implements OnInit {
     getPromotions(length){
         firebase.getValue('/promotions/'+this.company.getCompanyName()+'/'+this.items.pop())
         .then(result=>{
-            console.log("company"+this.company.getCompanyName());
             this.promoInfo =[];
             this.promoInfo.push(result.value.promoName);
             this.promoInfo.push(result.value.promoDesc);
             this.promotions.push(this.promoInfo);
             this.index++;
             this.checkPromotions(length);
+        })
+    }
+
+    onItemTap(args) {
+        
+        dialogs.alert({
+            title: this.promotionsForList[args.index].promotionName,
+            message: this.promotionsForList[args.index].promotionDesc,
+            okButtonText: "OK"
+        }).then(() => {
         })
     }
 }
