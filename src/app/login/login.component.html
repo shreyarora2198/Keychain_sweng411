@@ -1,17 +1,11 @@
 <ActionBar class="action-bar">
     <Label></Label>
 </ActionBar>
-<!-- <StackLayout>
-    <Label text="Login page"></Label>
-    <Button text="Login" (tap)="routeKeychainCard()"></Button>
-    <Button text="Sign up" (tap)="routeSignup()"></Button>
-</StackLayout> -->
-<Page id="page" (loaded)="pageLoaded($event)">
+<Page id="page">
 <FlexboxLayout class="page" loaded = "pageLoaded">
 <Image src="~/images/Keychain_Logo.png" width="300" class="logo"></Image>
 <StackLayout class="form">
-        <!-- <Label class="title" text="KEYCHAIN"></Label> -->
-
+    
         <StackLayout class="input-field">
             <TextField [(ngModel)]="this.email" id ="email" class="input" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
         </StackLayout>
